@@ -27,7 +27,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'profile_photo_path',
         'address', 'houseNumber', 'phoneNumber', 'city', 'roles'
     ];
 
@@ -58,7 +58,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $appends = [
-        'profile_photo_url',
+        'profile_photo_path',
     ];
 
     public function getCreatedAtAttribute($value)
