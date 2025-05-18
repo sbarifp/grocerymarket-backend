@@ -70,12 +70,12 @@ class UserController extends Controller
                 'houseNumber' => $request->houseNumber,
                 'phoneNumber' => $request->phoneNumber,
                 'city' => $request->city,
-                'password' => $request->Hash::make($request->password),
+                'password' => Hash::make($request->password),
             ]);
 
             $user = User::where('email', $request->email)->first();
 
-            $tokenResult = $user-createToken('authToken')->plainTextToken;
+            $tokenResult = $user->createToken('authToken')->plainTextToken;
 
             return ResponseFormatter::success([
                 'access_token' => $tokenResult,
