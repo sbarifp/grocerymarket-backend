@@ -81,7 +81,7 @@ class UserController extends Controller
                 'access_token' => $tokenResult,
                 'token_type' => 'Bearer',
                 'user' => $user
-            ]);
+            ], 'User Registered');
 
         } catch (Exception $error) {
             return ResponseFormatter::error([
